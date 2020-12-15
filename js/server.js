@@ -21,7 +21,8 @@ var server = {
             localStorage.removeItem('token');
             return;
         }
-        var url = window.location.host + '/ws';
+        //var url = window.location.host + '/ws';
+        var url = 'www.playtak.com/ws';
         var proto = 'wss://';
         if (window.location.protocol === "http:") {
             proto = 'ws://';

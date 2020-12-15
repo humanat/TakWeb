@@ -71,7 +71,7 @@ function init() {
     //renderer.setSize( 800, 640);
     renderer.setClearColor(0xdddddd, 1);
 
-    document.body.appendChild(renderer.domElement);
+    // document.body.appendChild(renderer.domElement);
 
     window.addEventListener('resize', onWindowResize, false);
     window.addEventListener('keyup', onKeyUp, false);

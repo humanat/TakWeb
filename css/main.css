@@ -4,6 +4,12 @@ body {
     overflow: hidden;
 }
 
+.canvaswrap {
+  display: block;
+  position: absolute;
+  width: 100%;
+}
+
 #gamecanvas{
     display: block;
     position: absolute;
