@@ -32,18 +32,11 @@ var antialiasing_mode = true;
 
 var botlist = {
     "TakticianBot": [0, "Very&nbsp;Hard"],
-    "TakkerusBot": [5, "Very&nbsp;Hard"],
-    "alphatak_bot": [10, "Hard"],
     "AaaarghBot": [15, "Hard"],
-    "ShlktBot": [20, "Intermediate"],
     "IntuitionBot": [25, "Intermediate"],
-    "takkybot": [30, "Easy"],
     "BeginnerBot": [40, "Beginner"],
     "FriendlyBot": [50, "Adjustable"],
-    "TakticianBotDev": [60, "Experimental"],
-    "FPABot":[65, "Experimental"],
-    "alphabot": [70, "Experimental"],
-    "cutak_bot": [80, "Experimental"]
+    "Tiltak_Bot": [60, "Very&nbsp;Hard"]
 };
 
 init();
@@ -60,20 +53,14 @@ function init() {
 
     camera = new THREE.PerspectiveCamera(70, canvas.width / canvas.height, 1, 2000);
     camera.position.set(0, canvas.width / 2, canvas.height / 2);
-    //camera.updateProjectionMatrix();
 
     scene = new THREE.Scene();
 
     renderer = new THREE.WebGLRenderer({canvas: canvas,
         antialias: antialiasing_mode});
-    //renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize( window.innerWidth, window.innerHeight );
-    //renderer.setSize( 800, 640);
     renderer.setClearColor(0xdddddd, 1);
 
-    // document.body.appendChild(renderer.domElement);
-
-    window.addEventListener('resize', onWindowResize, false);
     window.addEventListener('keyup', onKeyUp, false);
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -99,29 +86,6 @@ function init() {
 
     materials.updateBoardMaterials();
     materials.updatePieceMaterials();
-}
-
-function onWindowResize() {
-  /*canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  renderer.setSize(canvas.width, canvas.height);
-
-  camera.aspect = canvas.width / canvas.height;
-  camera.updateProjectionMatrix();
-
-  $('#chat').offset({ top: $('nav').height() + 5 });
-  $('#chat-toggle-button').offset({ top: $('nav').height() + 7 });
-  $('#chat').height(window.innerHeight - $('nav').height() - 85
-      + (localStorage.getItem('hide-send')==='true' ? 34 : 0));
-
-  if(isBreakpoint('xs') || isBreakpoint('sm')) {
-    chathandler.hidechat();
-    hidermenu();
-  } else {
-    chathandler.showchat();
-    showrmenu();
-  }*/
 }
 
 var dontanimate=false;
