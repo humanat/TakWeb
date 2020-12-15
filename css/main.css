@@ -320,13 +320,7 @@ input[type=range]::-webkit-slider-runnable-track {
     color: #b3b3b3;
 }
 
-#player-opp, .player1-name {
-    display: inline-block;
-    color: #a3a3a3;
-    padding: 2px;
-}
-
-#player-me, .player2-name {
+#player-me, #player-opp, .player1-name, .player2-name {
     display: inline-block;
     color: black;
     padding: 2px;
