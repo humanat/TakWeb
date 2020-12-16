@@ -1,7 +1,7 @@
 var white_piece_styles = ["simple", "coral"];
 var black_piece_styles = ["simple", "pietersite"];
-var white_square_styles = ["sand-velvet-diamonds", "sand-velvet", "wood-diamonds", "ornate", "white-velvet"];
-var black_square_styles = ["sand-velvet-diamonds", "sand-velvet", "wood-diamonds", "ornate", "blue-velvet"];
+var white_square_styles = ["sand-velvet", "sand-velvet-diamonds", "sand-velvet-diamonds2", "ornate", "white-velvet"];
+var black_square_styles = ["sand-velvet", "sand-velvet-diamonds", "sand-velvet-diamonds2", "ornate", "blue-velvet"];
 
 function make_board_selector(color)
 {
