@@ -279,30 +279,6 @@ input[type=range]::-webkit-slider-runnable-track {
   vertical-align: middle;
 }
 
-/*#moveslist thead, #moveslist tbody{
-    float: left;
-    width: 100%;
-}
-
-#moveslist tbody {
-    overflow: auto;
-    height: 150px;
-}
-
-#moveslist tr {
-    width: 100%;
-    display: table;
-    text-align: left;
-}
-
-#moveslist>tr>td {
-    text-align: left;
-}
-
-#moveslist>tr>td:last-child {
-    text-align: right;
-}*/
-
 .selected {
     background: red;
 }
