@@ -358,6 +358,12 @@ var board = {
         document.getElementById("player-opp").className = "selectplayer";
         document.getElementById("player-me").className = "";
 
+        var fov = camera.fov * (Math.PI/180);
+        // math is slightly off to make the board seem bigger than it should be (helps with chat window in landscape view)
+        var bwidth = (piece_size*(this.size+2))+(6*border_size);
+        var dist = Math.abs(bwidth/Math.tan(fov/2));
+        camera.position.set(0, (dist/(canvas.width/bwidth))+100, (dist/(canvas.width/bwidth))-100);
+
         if (this.mycolor !== this.boardside)
             this.reverseboard();
     },

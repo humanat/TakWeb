@@ -52,7 +52,6 @@ function init() {
     canvas.height = window.innerHeight;
 
     camera = new THREE.PerspectiveCamera(70, canvas.width / canvas.height, 1, 2000);
-    camera.position.set(0, canvas.width / 2, canvas.height / 2);
 
     scene = new THREE.Scene();
 
