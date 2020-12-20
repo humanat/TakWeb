@@ -50,6 +50,9 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="nav pull-left">
+                        <button type="button" class="btn navbar-toggle" data-toggle="modal" data-target="#settings-modal">
+                            <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
+                        </button>
                         <button type="button" class="btn navbar-toggle " onclick="server.init()">
                             <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
                         </button>
@@ -439,84 +442,84 @@
                         <h4 class="modal-title">Settings</h4>
                     </div>
                     <div class="modal-body">
-                      <ul class="nav nav-tabs">
-                        <li role="presentation" class="active"><a href="#board" data-toggle="tab">Board and Pieces</a></li>
-                        <li role="presentation"><a href="#interface" data-toggle="tab">Interface</a></li>
-                        <li role="presentation"><a href="#account" data-toggle="tab">Account</a></li>
-                      </ul>
-                      <div class="tab-content clearfix">
-                        <div class="tab-pane active" id="board">
-                          <br/>
-                          <form>
-                            <input id="wall-orientation" type="checkbox" onClick="checkboxDiagonalWalls()"/>
-                            Diagonal walls
-                          </form><br/>
-                          <form>
-                            Piece size
-                            <input id="piece-size-slider" type="range" value="80" step="2" min="60" max="88" oninput="sliderPieceSize(this.value)" onChange="board.updatepieces()"/>
-                            <span id="piece-size-display">88</span>
-                          </form><br/>
-                          <form id="white_pieces_form">
-                            White pieces<br/>
-                          </form><br/>
-                          <form id="black_pieces_form">
-                            Black pieces<br/>
-                          </form><br/>
-                          <form id="white_squares_form">
-                            White squares<br/>
-                          </form><br/>
-                          <form id = "black_squares_form">
-                            Black squares<br/>
-                          </form>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="active"><a href="#board" data-toggle="tab">Board and Pieces</a></li>
+                            <li role="presentation"><a href="#interface" data-toggle="tab">Interface</a></li>
+                            <li role="presentation"><a href="#account" data-toggle="tab">Account</a></li>
+                        </ul>
+                        <div class="tab-content clearfix">
+                            <div class="tab-pane active" id="board">
+                                <br/>
+                                <form>
+                                    <input id="wall-orientation" type="checkbox" onClick="checkboxDiagonalWalls()"/>
+                                    Diagonal walls
+                                </form><br/>
+                                <form>
+                                    Piece size
+                                    <input id="piece-size-slider" type="range" value="80" step="2" min="60" max="88" oninput="sliderPieceSize(this.value)" onChange="board.updatepieces()"/>
+                                    <span id="piece-size-display">88</span>
+                                </form><br/>
+                                <form id="white_pieces_form">
+                                    White pieces<br/>
+                                </form><br/>
+                                <form id="black_pieces_form">
+                                    Black pieces<br/>
+                                </form><br/>
+                                <form id="white_squares_form">
+                                    White squares<br/>
+                                </form><br/>
+                                <form id = "black_squares_form">
+                                    Black squares<br/>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="interface">
+                                <br/>
+                                <form>
+                                    <input id="antialiasing-checkbox" type="checkbox" onClick="checkboxAntialiasing()" checked/>
+                                    Antialiasing
+                                    <br/>
+                                    <br/>
+                                    <input id="hide-chat-time" type="checkbox" onClick="chathandler.hideChatTime()"/>
+                                    Hide chat time
+                                    <br/>
+                                    <br/>
+                                    <input id="hide-send-checkbox" type="checkbox" onClick="checkboxHideSend()"/>
+                                    Hide 'Send' button
+                                    <br/>
+                                    <br/>
+                                    <input id="auto-rotate-checkbox" type="checkbox" onClick="checkboxAutoRotate()" checked/>
+                                    Rotate board when player 2
+                                    <br/>
+                                    <br/>
+                                    Chat size
+                                    <input id="chat-size-slider" type="range" value="180" step="2" min="100" max="500" oninput="sliderChatSize(this.value)"/>
+                                    <span id="chat-size-display">180</span>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="account">
+                                <form role="form" onsubmit="server.changepassword(); return false;">
+                                    <br/>
+                                    <h4>Change Password</h4><br/>
+                                    <div class="form-group">
+                                        <label for="pwd">Current password:</label>
+                                        <input type="password" class="form-control" id="cur-pwd">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">New password:</label>
+                                        <input type="password" class="form-control" id="new-pwd">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Retype new password:</label>
+                                        <input type="password" class="form-control" id="retype-new-pwd">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Change Password</button>
+                                </form>
+                            </div>
                         </div>
-                      <div class="tab-pane" id="interface">
-                        <br/>
-                        <form>
-                          <input id="antialiasing-checkbox" type="checkbox" onClick="checkboxAntialiasing()" checked/>
-                          Antialiasing (not recommended for slower devices. Requires page refresh to take effect)
-                          <br/>
-                          <br/>
-                          <input id="hide-chat-time" type="checkbox" onClick="chathandler.hideChatTime()"/>
-                          Hide chat time
-                          <br/>
-                          <br/>
-                          <input id="hide-send-checkbox" type="checkbox" onClick="checkboxHideSend()"/>
-                          Hide 'Send' button
-                          <br/>
-                          <br/>
-                          <input id="auto-rotate-checkbox" type="checkbox" onClick="checkboxAutoRotate()" checked/>
-                          Rotate board when player 2
-                          <br/>
-                          <br/>
-                          Chat size
-                          <input id="chat-size-slider" type="range" value="180" step="2" min="100" max="500" oninput="sliderChatSize(this.value)"/>
-                          <span id="chat-size-display">180</span>
-                        </form>
-                      </div>
-                      <div class="tab-pane" id="account">
-                        <form role="form" onsubmit="server.changepassword(); return false;">
-                          <br/>
-                          <h4>Change Password</h4><br/>
-                          <div class="form-group">
-                            <label for="pwd">Current password:</label>
-                            <input type="password" class="form-control" id="cur-pwd">
-                          </div>
-                          <div class="form-group">
-                            <label for="pwd">New password:</label>
-                            <input type="password" class="form-control" id="new-pwd">
-                          </div>
-                          <div class="form-group">
-                            <label for="pwd">Retype new password:</label>
-                            <input type="password" class="form-control" id="retype-new-pwd">
-                          </div>
-                          <button type="submit" class="btn btn-primary">Change Password</button>
-                        </form>
-                      </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
         <div id="privacy-modal" class="modal fade">
             <div class="modal-dialog modal-md">
