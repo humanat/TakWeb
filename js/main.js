@@ -1,4 +1,5 @@
-function alert(type, msg) {
+function alert(type, msg, keep) {
+    if (typeof keep === 'undefined') keep = false;
     $('#alert-text').text(msg);
     var $alert = $('#alert');
     $alert.removeClass("alert-success alert-info alert-warning alert-danger");
@@ -6,9 +7,13 @@ function alert(type, msg) {
     $alert.addClass("alert-"+type);
     $alert.removeClass('hidden');
     $alert.stop(true, true);
-    $alert.fadeTo(4000, 500).slideUp(500, function() {
-        $alert.addClass('hidden');
-    });
+    if (keep) {
+        $alert.fadeTo(4000, 500);
+    } else {
+        $alert.fadeTo(4000, 500).slideUp(500, function() {
+            $alert.addClass('hidden');
+        });
+    }
     alert2(type, msg);
 }
 

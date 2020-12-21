@@ -336,7 +336,7 @@ var server = {
             }
             //Game#1 RequestUndo
             else if (spl[1] === "RequestUndo") {
-              alert("info", "Your opponent requests to undo the last move");
+              alert("info", "Your opponent requests to undo the last move", true);
               $('#undo').toggleClass('opp-requested-undo request-undo');
             }
             //Game#1 RemoveUndo
@@ -353,7 +353,7 @@ var server = {
             //Game#1 OfferDraw
             else if (spl[1] === "OfferDraw") {
                 $('#draw').toggleClass('opp-offered-draw offer-draw');
-                alert("info", "Draw is offered by your opponent");
+                alert("info", "Draw is offered by your opponent", true);
             }
             //Game#1 RemoveDraw
             else if (spl[1] === "RemoveDraw") {
